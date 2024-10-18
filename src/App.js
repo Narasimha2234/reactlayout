@@ -1,24 +1,25 @@
-import logo from './logo.svg';
 import './App.css';
+import NavBar from './components/NavBar';
+import SideNav from './components/SideNav';
+import GlobalThemeProvider from './theme/GlobalThemeProvider';
+import { Box } from '@mui/material';
+import Home from './components/pages/public/Home';
+import AppRoutes from './components/routes/Routes';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <GlobalThemeProvider>
+      {/* <Box sx={{ display: 'flex', minHeight: '100vh' }}>
+        <NavBar />
+        <SideNav open={false} />
+        <Box
+          component="main"
+          sx={{ flexGrow: 1, p: 3 ,mt:5 }}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
+          <Home />
+        </Box>
+      </Box> */} <AppRoutes/>
+    </GlobalThemeProvider>
   );
 }
 
