@@ -9,12 +9,12 @@ import { Outlet } from 'react-router-dom';
 
 const AfterLoginLayout = () => {
   return (
-    <Box sx={{ display: 'flex', minHeight: '100vh' }}>
+    <Box sx={{  minHeight: '90vh' }}>
       <NavBar />
-      <SideNav  />
+      {/* <SideNav  /> */}
       <Box
         component="main"
-        sx={{ flexGrow: 1, p: 5, mt: 5 ,}}
+        sx={{   mt: 10 ,}}
       >
                <Outlet />  
       </Box>

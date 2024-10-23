@@ -4,21 +4,19 @@ import { alpha } from '@mui/material/styles';
 
 
 export const primary = {
-  lighter: '#FFB67E',
-  light: '#E6773D',
-  main: '#F04E23',
-  dark: '#B5361B',
-  darker: '#7F2213',
-  
-};
-
-export const secondary = {
   lighter: '#67A7E1',
   light: '#4A88BF',
   main: '#256BB0',
   dark: '#1B4E87',
-  darker: '#12366A',
-  
+  darker: '#12366A'
+};
+
+export const secondary = {
+  lighter: '#FFB67E',
+  light: '#E6773D',
+  main: '#F04E23',
+  dark: '#B5361B',
+  darker: '#7F2213', 
 };
 
 export const info = {

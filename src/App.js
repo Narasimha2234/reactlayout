@@ -1,24 +1,21 @@
 import './App.css';
-import NavBar from './components/NavBar';
-import SideNav from './components/SideNav';
 import GlobalThemeProvider from './theme/GlobalThemeProvider';
-import { Box } from '@mui/material';
-import Home from './components/pages/public/Home';
 import AppRoutes from './components/routes/Routes';
+import { AuthContextProvider } from './auth/AuthContextProvider';
+import { SnackbarProvider } from 'notistack';
 
 function App() {
   return (
     <GlobalThemeProvider>
-      {/* <Box sx={{ display: 'flex', minHeight: '100vh' }}>
-        <NavBar />
-        <SideNav open={false} />
-        <Box
-          component="main"
-          sx={{ flexGrow: 1, p: 3 ,mt:5 }}
+      <AuthContextProvider>
+        <SnackbarProvider  
+          maxSnack={3} 
+          anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+          autoHideDuration={3000}
         >
-          <Home />
-        </Box>
-      </Box> */} <AppRoutes/>
+             <AppRoutes/>
+         </SnackbarProvider>
+      </AuthContextProvider>
     </GlobalThemeProvider>
   );
 }
