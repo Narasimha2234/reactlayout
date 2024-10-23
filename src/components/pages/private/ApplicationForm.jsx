@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import { Box, Typography, TextField, Button,  Stack } from "@mui/material";
+import { Box, Typography, TextField, Button,  Stack, CircularProgress } from "@mui/material";
 import { AttachFile } from "@mui/icons-material";
 import { useParams, useNavigate, useSearchParams } from "react-router-dom";
 
@@ -35,6 +35,7 @@ const schema = yup.object().shape({
 });
 
 const JobApplicationForm = () => {
+  const[loading,setLoading]=useState(false)
   const {user} =useContext(AuthContext)
   const[params]=useSearchParams()
   const jobId = params.get('JobId');
@@ -64,6 +65,7 @@ const initialValue={
   });
 
   const onSubmit = async (data) => {
+    setLoading(true)
     const formData = new FormData();
     formData.append("name", data.name);
     formData.append("email", data.email);
@@ -76,8 +78,7 @@ const initialValue={
 
     try {
      const response= await applyForm(formData);
-     console.log(response);
-     
+     setLoading(false)
       enqueueSnackbar("Application Submitted Succussfully",{variant:"success"})
       navigate("/");
     } catch (error) {
@@ -237,7 +238,7 @@ const initialValue={
               fullWidth
               sx={buttonStyle}
             >
-              Submit Application
+              {loading?<CircularProgress color="white"/>:"submit"}
             </Button>
           </form>
         </Box>

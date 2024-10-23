@@ -16,7 +16,8 @@ const schema = yup.object().shape({
   email: yup
     .string()
     .email("Invalid email format")
-    .required("Email is required"),
+    .required("Email is required")
+    .matches(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,"invalid email"),
   password: yup
     .string()
     .min(8, "Password must be at least 8 characters")

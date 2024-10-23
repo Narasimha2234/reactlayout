@@ -8,7 +8,7 @@ import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
 
 
-// Custom Next Arrow Component
+
 const NextArrow = ({ onClick }) => {
   return (
     <IconButton
@@ -29,7 +29,7 @@ const NextArrow = ({ onClick }) => {
   );
 };
 
-// Custom Prev Arrow Component
+
 const PrevArrow = ({ onClick }) => {
   return (
     <IconButton
