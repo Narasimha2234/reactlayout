@@ -80,7 +80,7 @@ const initialValue={
      const response= await applyForm(formData);
      setLoading(false)
       enqueueSnackbar("Application Submitted Succussfully",{variant:"success"})
-      navigate("/");
+      navigate("/orchasp/careers/list");
     } catch (error) {
      enqueueSnackbar("Failed to submit the application.",{variant:"error"})
     }

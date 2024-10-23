@@ -11,6 +11,7 @@ const NavBar = () => {
   const theme = useTheme();
   const { isLoggedIn, user, logout } = useContext(AuthContext); // Assuming `logout` function exists in your context
   const { toggleSideNav } = useContext(ThemeToggleContext);
+console.log(user);
 
   
   const [anchorEl, setAnchorEl] = useState(null);
